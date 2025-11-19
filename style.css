@@ -7,8 +7,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #e0e0e0;
+    background: #0a0a0a;
 }
 
 .container {
@@ -19,12 +19,13 @@ body {
 
 /* Header */
 header {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 2px 10px rgba(255,255,255,0.1);
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid #1a1a1a;
 }
 
 nav {
@@ -40,7 +41,7 @@ nav {
     gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: #e0e0e0;
 }
 
 .logo img {
@@ -56,13 +57,13 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #b0b0b0;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #667eea;
+    color: #00d9ff;
 }
 
 /* Hero Section */
@@ -129,18 +130,18 @@ nav a:hover {
 /* Sections */
 section {
     padding: 80px 20px;
-    background: white;
+    background: #0a0a0a;
 }
 
 section:nth-child(even) {
-    background: #f8f9fa;
+    background: #121212;
 }
 
 h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #667eea;
+    color: #00d9ff;
 }
 
 /* About Section */
@@ -154,10 +155,11 @@ h2 {
     font-size: 1.1rem;
     margin-bottom: 1rem;
     line-height: 1.8;
+    color: #b0b0b0;
 }
 
 .fun-fact {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
     color: white;
     padding: 1rem;
     border-radius: 10px;
@@ -175,32 +177,35 @@ h2 {
 }
 
 .skill-card {
-    background: white;
+    background: #1a1a1a;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
+    border: 1px solid #2a2a2a;
 }
 
 .skill-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
 }
 
 .skill-card h3 {
-    color: #667eea;
+    color: #00d9ff;
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
 
 .skill-tag {
     display: inline-block;
-    background: #667eea;
-    color: white;
+    background: #00d9ff;
+    color: #0a0a0a;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     margin: 0.3rem;
     font-size: 0.9rem;
+    font-weight: 600;
 }
 
 /* Projects Section */
@@ -213,44 +218,52 @@ h2 {
 }
 
 .project-card {
-    background: white;
+    background: #1a1a1a;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #2a2a2a;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
 }
 
 .project-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #00d9ff 0%, #0099cc 100%);
+    color: #0a0a0a;
     padding: 1.5rem;
 }
 
 .project-header h3 {
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 .project-body {
     padding: 1.5rem;
 }
 
+.project-body p {
+    color: #b0b0b0;
+}
+
 .project-link {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background: #667eea;
-    color: white;
+    background: #00d9ff;
+    color: #0a0a0a;
     text-decoration: none;
     border-radius: 5px;
     transition: background 0.3s;
+    font-weight: 600;
 }
 
 .project-link:hover {
-    background: #764ba2;
+    background: #00b8e6;
 }
 
 /* Contact Section */
@@ -268,33 +281,41 @@ h2 {
 }
 
 .contact-item {
-    background: white;
+    background: #1a1a1a;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid #2a2a2a;
+    transition: box-shadow 0.3s;
+}
+
+.contact-item:hover {
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
 }
 
 .contact-item h3 {
-    color: #667eea;
+    color: #00d9ff;
     margin-bottom: 0.5rem;
 }
 
 .contact-item a {
-    color: #764ba2;
+    color: #b0b0b0;
     text-decoration: none;
     font-weight: 500;
 }
 
 .contact-item a:hover {
+    color: #00d9ff;
     text-decoration: underline;
 }
 
 /* Footer */
 footer {
-    background: #333;
-    color: white;
+    background: #0a0a0a;
+    color: #b0b0b0;
     text-align: center;
     padding: 2rem;
+    border-top: 1px solid #1a1a1a;
 }
 
 /* Animations */
