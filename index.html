@@ -4,127 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pretty Flacko - Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="assets/logoBlack.ico">
+    <link rel="icon" type="image/x-icon" href="assets/logoWhite.ico">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
     <!-- Navigation -->
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <img src="assets/logoBlack.png" alt="Logo">
-                <span>Pretty Flacko</span>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-left">
+                <img src="assets/logoWhite.png" alt="Logo" class="logo">
+                <h1 class="brand">Pretty Flacko</h1>
+                <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             </div>
-            <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+            <div class="header-right">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#skills">Compétences</a></li>
+                        <li><a href="#projects">Projets</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Changer de thème">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+        </div>
     </header>
+
+    <!-- Stars Background -->
+    <div class="stars-background">
+        <div class="stars"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <img src="assets/avatar.jpg" alt="Avatar" class="avatar">
-            <h1>👋 Salut, je suis Pretty Flacko</h1>
-            <p>Étudiant en informatique | Développeur passionné</p>
+        <div class="container">
+            <img src="assets/avatar.jpg" alt="Avatar" class="avatar avatar-hero">
+            <h2>Salut, je suis Pretty Flacko</h2>
+            <p class="lead">Étudiant en informatique | Développeur passionné</p>
+            <div class="tech-badges">
+                <span class="tech-badge">Go</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Git</span>
+            </div>
+            <a href="#projects" class="cta">Voir mes projets</a>
             <div class="social-links">
                 <a href="https://github.com/ANome1" target="_blank" title="GitHub">🔗</a>
                 <a href="https://www.instagram.com/the_l.emon/" target="_blank" title="Instagram">📷</a>
-                <a href="http://prettyflacko.fr" target="_blank" title="Portfolio">🌐</a>
+                <a href="mailto:contact@prettyflacko.fr" target="_blank" title="Email">📧</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="reveal">
         <div class="container">
-            <h2>À propos de moi</h2>
-            <div class="about-content">
-                <p>🎓 Étudiant en informatique passionné par le développement et les nouvelles technologies.</p>
-                <p>💻 Actuellement en apprentissage de Go (Golang), un langage moderne et performant.</p>
-                <p>🐍 À l'aise avec Python et le développement web, je crée des applications fonctionnelles et élégantes.</p>
-                <p>📁 La plupart de mes dépôts sont des projets scolaires qui reflètent mon parcours d'apprentissage et mes compétences croissantes.</p>
-                <div class="fun-fact">
-                    ⚡ Fun fact : J'ai 20 ans et je suis toujours en train d'apprendre de nouvelles choses !
+            <div class="about">
+                <h2>À propos de moi</h2>
+                <div class="para">
+                    <p>🎓 Étudiant en informatique passionné par le développement et les nouvelles technologies.</p>
+                    <p>💻 Actuellement en apprentissage de Go (Golang), un langage moderne et performant.</p>
+                    <p>🐍 À l'aise avec Python et le développement web, je crée des applications fonctionnelles et élégantes.</p>
+                    <p>📁 La plupart de mes dépôts sont des projets scolaires qui reflètent mon parcours d'apprentissage et mes compétences croissantes.</p>
+                    <p>⚡ Fun fact : J'ai 20 ans et je suis toujours en train d'apprendre de nouvelles choses !</p>
                 </div>
+                <ul class="skills">
+                    <li>Go</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>HTML & CSS</li>
+                    <li>Git</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" class="reveal">
         <div class="container">
             <h2>🚀 Compétences</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>Langages de Programmation</h3>
+                <div class="skill-card stagger-item">
+                    <h3>Langages</h3>
                     <div>
-                        <span class="skill-tag">Go</span>
+                        <span class="skill-tag">GOLANG</span>
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">HTML/CSS</span>
                     </div>
                 </div>
-                <div class="skill-card">
-                    <h3>Développement Web</h3>
+                <div class="skill-card stagger-item">
+                    <h3>Web</h3>
                     <div>
+                        <span class="skill-tag">HTML & CSS</span>
                         <span class="skill-tag">Frontend</span>
                         <span class="skill-tag">Backend</span>
-                        <span class="skill-tag">Responsive Design</span>
                     </div>
                 </div>
-                <div class="skill-card">
-                    <h3>Outils & Technologies</h3>
+                <div class="skill-card stagger-item">
+                    <h3>Outils</h3>
                     <div>
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">GitHub</span>
                         <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">Linux</span>
                     </div>
                 </div>
+            </div>
+            
+            <!-- Top Languages -->
+            <div class="top-languages">
+                <h3>Langages les plus utilisés</h3>
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ANome1&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b3a&title_color=8b5cf6&text_color=f1f0ff" alt="Top Languages" class="github-stat-card">
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
+        <!-- Projects Section -->
+    <section id="projects" class="reveal">
+        <div class="container projects">
             <h2>📁 Mes Projets</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Power 4 (Connect 4)</h3>
-                        <p>⭐ 1 étoile</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Jeu de Puissance 4 développé en Golang avec une interface web interactive. Un projet qui combine logique de jeu et développement web.</p>
-                        <p><strong>Technologies:</strong> Go, HTML, CSS</p>
-                        <a href="https://github.com/ANome1/projet_Power4" target="_blank" class="project-link">Voir le projet →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>RED TERMINA RPG</h3>
-                        <p>⭐ 1 étoile</p>
-                    </div>
-                    <div class="project-body">
-                        <p>Projet Red Ynov - Un RPG en terminal développé en Go. Une aventure textuelle immersive dans la console.</p>
-                        <p><strong>Technologies:</strong> Go</p>
-                        <a href="https://github.com/ANome1/projet-red_TERMINA_RPG" target="_blank" class="project-link">Voir le projet →</a>
+                <div class="project-card stagger-item">
+                    <h3>POWER 4</h3>
+                    <p>Jeu de Puissance 4 en Go avec une interface web.</p>
+                    <div class="project-meta">
+                        <span class="badge">GOLANG</span>
+                        <div style="display: flex; gap: 8px;">
+                            <a href="https://github.com/ANome1/projet_Power4" target="_blank" class="project-link">GitHub →</a>
+                            <a href="https://power4.prettyflacko.fr" target="_blank" class="project-link">Jouer →</a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Portfolio Personnel</h3>
-                        <p>🚧 En développement</p>
+                <div class="project-card stagger-item">
+                    <h3>TERMINA RPG</h3>
+                    <p>Un RPG textuel dans un univers fantastique, développé en Go.</p>
+                    <div class="project-meta">
+                        <span class="badge">GOLANG</span>
+                        <a href="https://github.com/ANome1/projet-red_TERMINA_RPG" target="_blank" class="project-link">GitHub →</a>
                     </div>
-                    <div class="project-body">
-                        <p>Mon site portfolio personnel en cours de développement pour présenter mes projets et compétences de manière professionnelle.</p>
-                        <p><strong>Technologies:</strong> Web</p>
-                        <a href="http://prettyflacko.fr" target="_blank" class="project-link">Visiter le site →</a>
+                </div>
+                <div class="project-card stagger-item">
+                    <h3>Portfolio</h3>
+                    <p>Mon portfolio personnel présentant mes projets et compétences.</p>
+                    <div class="project-meta">
+                        <span class="badge">WEB</span>
+                        <a href="http://prettyflacko.fr" target="_blank" class="project-link">Visiter →</a>
                     </div>
                 </div>
             </div>
@@ -132,11 +166,33 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="contact" class="reveal">
         <div class="container">
-            <h2>📬 Contact</h2>
-            <div class="contact-content">
+            <div class="contact">
+                <h2>📬 Contact</h2>
                 <p>N'hésitez pas à me contacter pour toute collaboration, question ou simplement pour échanger !</p>
+                
+                <form id="contact-form">
+                    <div class="field">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom">
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+                    <div class="field">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Sujet du message">
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
+                    </div>
+                    <button type="submit">Envoyer le message</button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+
                 <div class="contact-info">
                     <div class="contact-item">
                         <h3>🔗 GitHub</h3>
@@ -147,8 +203,8 @@
                         <a href="https://www.instagram.com/the_l.emon/" target="_blank">@the_l.emon</a>
                     </div>
                     <div class="contact-item">
-                        <h3>🌐 Portfolio</h3>
-                        <a href="http://prettyflacko.fr" target="_blank">prettyflacko.fr</a>
+                        <h3>📧 Email</h3>
+                        <a href="mailto:contact@prettyflacko.fr" target="_blank">contact@prettyflacko.fr</a>
                     </div>
                 </div>
             </div>
@@ -156,9 +212,134 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Pretty Flacko - Tous droits réservés</p>
-        <p>💭 Prrrrrrrrr</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; 2025 Pretty Flacko - Tous droits réservés</p>
+            <div class="social">
+                <a href="https://github.com/ANome1" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/the_l.emon/" target="_blank">Instagram</a>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Fonction pour basculer entre les thèmes
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            const themeIcon = document.getElementById('theme-icon');
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Changer l'icône
+            themeIcon.textContent = newTheme === 'light' ? '☀️' : '🌙';
+        }
+
+        // Toggle mobile navigation
+        document.querySelector('.nav-toggle')?.addEventListener('click', () => {
+            document.querySelector('.header-inner').classList.toggle('nav-open');
+        });
+
+        // Charger le thème sauvegardé au chargement de la page
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const themeIcon = document.getElementById('theme-icon');
+            
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeIcon.textContent = savedTheme === 'light' ? '☀️' : '🌙';
+        });
+
+        // ========================================
+        // ANIMATIONS
+        // ========================================
+
+        // Scroll Progress Bar
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scroll-progress');
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        }
+
+        window.addEventListener('scroll', updateScrollProgress);
+
+        // Scroll Reveal Animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                const revealPoint = 100;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                    
+                    // Activer aussi les stagger items dans cette section
+                    const staggerItems = element.querySelectorAll('.stagger-item');
+                    staggerItems.forEach(item => {
+                        item.classList.add('active');
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Gestion du formulaire de contact
+        document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formStatus = document.getElementById('form-status');
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            
+            // Récupérer les données du formulaire
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Désactiver le bouton et afficher un message de chargement
+            submitButton.disabled = true;
+            submitButton.textContent = 'Envoi en cours...';
+            formStatus.textContent = '';
+            
+            try {
+                // Construction du mailto avec les données du formulaire
+                const mailtoLink = `mailto:contact@prettyflacko.fr?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+                    `Nom: ${formData.name}\n` +
+                    `Email: ${formData.email}\n\n` +
+                    `Message:\n${formData.message}`
+                )}`;
+                
+                // Ouvrir le client mail
+                window.location.href = mailtoLink;
+                
+                // Afficher un message de succès
+                formStatus.textContent = '✓ Votre client mail va s\'ouvrir...';
+                formStatus.style.color = 'var(--accent)';
+                
+                // Réinitialiser le formulaire
+                document.getElementById('contact-form').reset();
+                
+            } catch (error) {
+                formStatus.textContent = '✗ Une erreur est survenue. Veuillez réessayer.';
+                formStatus.style.color = 'var(--accent-2)';
+            } finally {
+                // Réactiver le bouton
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                }, 2000);
+            }
+        });
+    </script>
 </body>
 </html>
