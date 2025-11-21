@@ -66,7 +66,6 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     
     const formData = {
         name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
         subject: document.getElementById('subject').value,
         message: document.getElementById('message').value
     };
@@ -82,7 +81,6 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     try {
         const mailtoLink = `mailto:contact@prettyflacko.fr?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
             `Nom: ${formData.name}\n` +
-            `Email: ${formData.email}\n\n` +
             `Message:\n${formData.message}`
         )}`;
         
