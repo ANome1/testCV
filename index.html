@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+""<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pretty Flacko - Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="images/logo-white.ico">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" type="image/x-icon" href="assets/logoWhite.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Scroll Progress Bar -->
@@ -15,7 +15,7 @@
     <header class="site-header">
         <div class="header-inner">
             <div class="header-left">
-                <img src="images/logo-white.png" alt="Logo" class="logo">
+                <img src="assets/logoWhite.png" alt="Logo" class="logo">
                 <h1 class="brand">Pretty Flacko</h1>
                 <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
             </div>
@@ -48,7 +48,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <img src="images/profile.jpg" alt="Avatar" class="avatar avatar-hero">
+            <img src="assets/avatar.jpg" alt="Avatar" class="avatar avatar-hero">
             <h2>Salut, je suis Pretty Flacko</h2>
             <p class="lead">Étudiant en informatique | Développeur passionné</p>
             <div class="tech-badges">
@@ -222,6 +222,124 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        // Fonction pour basculer entre les thèmes
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            const themeIcon = document.getElementById('theme-icon');
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Changer l'icône
+            themeIcon.textContent = newTheme === 'light' ? '☀️' : '🌙';
+        }
+
+        // Toggle mobile navigation
+        document.querySelector('.nav-toggle')?.addEventListener('click', () => {
+            document.querySelector('.header-inner').classList.toggle('nav-open');
+        });
+
+        // Charger le thème sauvegardé au chargement de la page
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            const themeIcon = document.getElementById('theme-icon');
+            
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeIcon.textContent = savedTheme === 'light' ? '☀️' : '🌙';
+        });
+
+        // ========================================
+        // ANIMATIONS
+        // ========================================
+
+        // Scroll Progress Bar
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scroll-progress');
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        }
+
+        window.addEventListener('scroll', updateScrollProgress);
+
+        // Scroll Reveal Animation
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                const revealPoint = 100;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                    
+                    // Activer aussi les stagger items dans cette section
+                    const staggerItems = element.querySelectorAll('.stagger-item');
+                    staggerItems.forEach(item => {
+                        item.classList.add('active');
+                    });
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Gestion du formulaire de contact
+        document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formStatus = document.getElementById('form-status');
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            
+            // Récupérer les données du formulaire
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Désactiver le bouton et afficher un message de chargement
+            submitButton.disabled = true;
+            submitButton.textContent = 'Envoi en cours...';
+            formStatus.textContent = '';
+            
+            try {
+                // Construction du mailto avec les données du formulaire
+                const mailtoLink = `mailto:contact@prettyflacko.fr?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+                    `Nom: ${formData.name}\n` +
+                    `Email: ${formData.email}\n\n` +
+                    `Message:\n${formData.message}`
+                )}`;
+                
+                // Ouvrir le client mail
+                window.location.href = mailtoLink;
+                
+                // Afficher un message de succès
+                formStatus.textContent = '✓ Votre client mail va s\'ouvrir...';
+                formStatus.style.color = 'var(--accent)';
+                
+                // Réinitialiser le formulaire
+                document.getElementById('contact-form').reset();
+                
+            } catch (error) {
+                formStatus.textContent = '✗ Une erreur est survenue. Veuillez réessayer.';
+                formStatus.style.color = 'var(--accent-2)';
+            } finally {
+                // Réactiver le bouton
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+                }, 2000);
+            }
+        });
+    </script>
 </body>
 </html>

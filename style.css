@@ -342,6 +342,8 @@ body {
 section {
   margin-bottom: 24px;
   padding-top: 80px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Hero */
