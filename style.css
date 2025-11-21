@@ -748,16 +748,17 @@ section {
 .top-languages {
   text-align: center;
   margin-top: 48px;
+  margin-bottom: 24px;
 }
 
 .top-languages h3 {
   color: var(--text);
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   font-size: 1.5rem;
 }
 
 .github-stat-card {
-  max-width: 500px;
+  max-width: 700px;
   width: 100%;
   height: auto;
   border-radius: var(--radius);
