@@ -1,9 +1,19 @@
 <!DOCTYPE html>
-""<html lang="fr">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pretty Flacko - Portfolio</title>
+    <meta name="description" content="Portfolio de ANDRY Nomenafitia (Pretty Flacko) - Développeur web passionné spécialisé en Go, Python et JavaScript. Étudiant en informatique avec expérience chez Orange et en design graphique.">
+    <meta name="author" content="ANDRY Nomenafitia">
+    <meta name="keywords" content="ANDRY Nomenafitia, développeur, web, portfolio, Go, Python, JavaScript, stage, informatique, Orange, design">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ANDRY Nomenafitia - Développeur Web Full-Stack">
+    <meta property="og:description" content="Développeur web passionné spécialisé en Go, Python et JavaScript. Expérience chez Orange et en design graphique.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prettyflacko.fr">
+    
+    <title>Pretty Flacko - Développeur Web | Portfolio</title>
     <link rel="icon" type="image/x-icon" href="images/logo-white.ico">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -48,20 +58,35 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <img src="images/profile.jpg" alt="Avatar" class="avatar avatar-hero">
-            <h2>Salut, je suis Pretty Flacko</h2>
-            <p class="lead">Étudiant en informatique | Développeur passionné</p>
+            <img src="images/profile.jpg" alt="Photo de profil ANDRY Nomenafitia" class="avatar avatar-hero">
+            <h1>ANDRY Nomenafitia</h1>
+            <p class="lead">Développeur Web Full-Stack</p>
+            <p class="subtitle">Étudiant en informatique • Passionné par les technologies modernes</p>
             <div class="tech-badges">
                 <span class="tech-badge">Go</span>
                 <span class="tech-badge">Python</span>
                 <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
                 <span class="tech-badge">Git</span>
             </div>
-            <a href="#projects" class="cta">Voir mes projets</a>
+            <div class="cta-group">
+                <a href="#contact" class="cta cta-primary">Me contacter</a>
+                <a href="#projects" class="cta cta-secondary">Voir mes projets</a>
+            </div>
             <div class="social-links">
-                <a href="https://github.com/ANome1" target="_blank" title="GitHub">🔗</a>
-                <a href="https://www.instagram.com/the_l.emon/" target="_blank" title="Instagram">📷</a>
-                <a href="mailto:contact@prettyflacko.fr" target="_blank" title="Email">📧</a>
+                <a href="https://github.com/ANome1" target="_blank" rel="noopener" title="GitHub">
+                    <img src="images/Webpage Click.ico" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/nomenafitia-andry-967467397/" target="_blank" rel="noopener" title="LinkedIn">
+                    <img src="images/LinkedIn.ico" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/the_l.emon/" target="_blank" rel="noopener" title="Instagram">
+                    <img src="images/Instagram.ico" alt="Instagram">
+                </a>
+                <a href="mailto:contact@prettyflacko.fr" target="_blank" rel="noopener" title="Email">
+                    <img src="images/Message Link.ico" alt="Email">
+                </a>
             </div>
         </div>
     </section>
@@ -70,21 +95,65 @@
     <section id="about" class="reveal">
         <div class="container">
             <div class="about">
-                <h2>À propos de moi</h2>
-                <div class="para">
-                    <p>🎓 Étudiant en informatique passionné par le développement et les nouvelles technologies.</p>
-                    <p>💻 Actuellement en apprentissage de Go (Golang), un langage moderne et performant.</p>
-                    <p>🐍 À l'aise avec Python et le développement web, je crée des applications fonctionnelles et élégantes.</p>
-                    <p>📁 La plupart de mes dépôts sont des projets scolaires qui reflètent mon parcours d'apprentissage et mes compétences croissantes.</p>
-                    <p>⚡ Fun fact : J'ai 20 ans et je suis toujours en train d'apprendre de nouvelles choses !</p>
+                <h2>À propos</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="intro">Développeur web passionné avec une solide formation en informatique et une expertise croissante dans les technologies modernes.</p>
+                        
+                        <h3>Formation</h3>
+                        <div class="experience-item">
+                            <h4>🎓 Bachelor Informatique - Lyon Ynov Campus</h4>
+                            <p class="experience-duration">En cours</p>
+                            <p>Formation approfondie en développement web, applications et systèmes. Spécialisation en architectures logicielles modernes, bases de données et méthodologies agiles.</p>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <h4>📚 Licence Mathématiques-Informatique</h4>
+                            <p class="experience-duration">Diplôme obtenu</p>
+                            <p>Formation universitaire combinant mathématiques appliquées et informatique, avec une solide base en algorithmique, structures de données et programmation.</p>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <h4>🏆 Baccalauréat Général</h4>
+                            <p class="experience-duration">Spécialités : Mathématiques et NSI</p>
+                            <p>Obtention du baccalauréat, spécialisé en Mathématiques et Numérique et Sciences Informatiques (NSI), posant les fondations de mon parcours en informatique.</p>
+                        </div>
+                                        
+                        <h3>Expériences professionnelles</h3>
+                        <div class="experience-item">
+                            <h4>📱 Stage Community Management - Orange</h4>
+                            <p class="experience-duration">1 mois</p>
+                            <p>Collaboration avec le community manager, découverte des stratégies marketing digital et gestion de la présence en ligne d'une grande entreprise. Participation à la création de contenu et à l'analyse des performances sur les réseaux sociaux.</p>
+                        </div>
+                        
+                        <div class="experience-item">
+                            <h4>🎨 Stage Design Graphique</h4>
+                            <p class="experience-duration">Formation intensive</p>
+                            <p>Apprentissage et maîtrise des outils Adobe (Photoshop, InDesign) auprès d'un graphiste professionnel. Développement de compétences en création visuelle, retouche photo et mise en page, complétant ainsi mon profil de développeur full-stack avec une sensibilité design.</p>
+                        </div>
+                        
+                        <h3>Objectif professionnel</h3>
+                        <p>Recherche activement un stage en développement web pour approfondir mes compétences techniques, contribuer à des projets concrets et apprendre auprès de professionnels expérimentés.</p>
+                    </div>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🎯</div>
+                            <h4>Polyvalent</h4>
+                            <p>Backend, Frontend, Full-Stack</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">💡</div>
+                            <h4>Autonome</h4>
+                            <p>Auto-apprentissage constant</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🤝</div>
+                            <h4>Collaboratif</h4>
+                            <p>Travail d'équipe efficace</p>
+                        </div>
+                    </div>
                 </div>
-                <ul class="skills">
-                    <li>Go</li>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>HTML & CSS</li>
-                    <li>Git</li>
-                </ul>
             </div>
         </div>
     </section>
@@ -129,36 +198,78 @@
     </section>
 
     <!-- Projects Section -->
-        <!-- Projects Section -->
     <section id="projects" class="reveal">
         <div class="container projects">
-            <h2>📁 Mes Projets</h2>
+            <h2>Projets Réalisés</h2>
+            <p class="section-intro">Une sélection de projets démontrant mes compétences techniques et ma capacité à mener des projets de bout en bout.</p>
+            
             <div class="projects-grid">
                 <div class="project-card stagger-item">
-                    <h3>POWER 4</h3>
-                    <p>Jeu de Puissance 4 en Go avec une interface web.</p>
-                    <div class="project-meta">
-                        <span class="badge">GOLANG</span>
-                        <div style="display: flex; gap: 8px;">
-                            <a href="https://github.com/ANome1/projet_Power4" target="_blank" class="project-link">GitHub →</a>
-                            <a href="https://power4.prettyflacko.fr" target="_blank" class="project-link">Jouer →</a>
+                    <div class="project-header">
+                        <h3>Power 4 Multijoueur</h3>
+                        <div class="project-tags">
+                            <span class="badge">Go</span>
+                            <span class="badge">WebSocket</span>
+                            <span class="badge">HTML/CSS</span>
                         </div>
                     </div>
-                </div>
-                <div class="project-card stagger-item">
-                    <h3>TERMINA RPG</h3>
-                    <p>Un RPG textuel dans un univers fantastique, développé en Go.</p>
-                    <div class="project-meta">
-                        <span class="badge">GOLANG</span>
-                        <a href="https://github.com/ANome1/projet-red_TERMINA_RPG" target="_blank" class="project-link">GitHub →</a>
+                    <p class="project-description">Application web de jeu Puissance 4 avec mode multijoueur en temps réel. Implémentation d'une architecture client-serveur utilisant WebSocket pour la communication instantanée. Interface utilisateur responsive et intuitive.</p>
+                    <ul class="project-features">
+                        <li>Architecture backend en Go pour performances optimales</li>
+                        <li>Système de matchmaking et gestion des parties</li>
+                        <li>Interface web moderne et responsive</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/ANome1/projet_Power4" target="_blank" class="project-link" rel="noopener">
+                            <span class="link-icon">🔗</span> Code source
+                        </a>
+                        <a href="https://power4.prettyflacko.fr" target="_blank" class="project-link project-link-demo" rel="noopener">
+                            <span class="link-icon">🎮</span> Démo live
+                        </a>
                     </div>
                 </div>
+                
                 <div class="project-card stagger-item">
-                    <h3>Portfolio</h3>
-                    <p>Mon portfolio personnel présentant mes projets et compétences.</p>
-                    <div class="project-meta">
-                        <span class="badge">WEB</span>
-                        <a href="http://prettyflacko.fr" target="_blank" class="project-link">Visiter →</a>
+                    <div class="project-header">
+                        <h3>Termina RPG</h3>
+                        <div class="project-tags">
+                            <span class="badge">Go</span>
+                            <span class="badge">POO</span>
+                            <span class="badge">CLI</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Jeu de rôle textuel dans le terminal avec système de combat au tour par tour, gestion d'inventaire et progression de personnage. Application des principes de programmation orientée objet en Go.</p>
+                    <ul class="project-features">
+                        <li>Système de combat stratégique et équilibré</li>
+                        <li>Gestion de personnages et inventaire</li>
+                        <li>Architecture modulaire et extensible</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/ANome1/projet-red_TERMINA_RPG" target="_blank" class="project-link" rel="noopener">
+                            <span class="link-icon">🔗</span> Code source
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card stagger-item">
+                    <div class="project-header">
+                        <h3>Portfolio Professionnel</h3>
+                        <div class="project-tags">
+                            <span class="badge">HTML/CSS</span>
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">Design</span>
+                        </div>
+                    </div>
+                    <p class="project-description">Site portfolio personnel conçu avec une attention particulière à l'expérience utilisateur et aux performances. Intègre des animations fluides, un mode sombre/clair et un design responsive.</p>
+                    <ul class="project-features">
+                        <li>Design moderne et épuré avec charte graphique personnalisée</li>
+                        <li>Animations CSS et JavaScript optimisées</li>
+                        <li>Thème clair/sombre avec sauvegarde des préférences</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/ANome1/testCV" target="_blank" class="project-link" rel="noopener">
+                            <span class="link-icon">🔗</span> Code source
+                        </a>
                     </div>
                 </div>
             </div>
@@ -195,16 +306,40 @@
 
                 <div class="contact-info">
                     <div class="contact-item">
-                        <h3>🔗 GitHub</h3>
-                        <a href="https://github.com/ANome1" target="_blank">@ANome1</a>
+                        <div class="contact-icon">
+                            <img src="images/Webpage Click.ico" alt="GitHub">
+                        </div>
+                        <div class="contact-text">
+                            <h3>GitHub</h3>
+                            <a href="https://github.com/ANome1" target="_blank" rel="noopener">@ANome1</a>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <h3>📷 Instagram</h3>
-                        <a href="https://www.instagram.com/the_l.emon/" target="_blank">@the_l.emon</a>
+                        <div class="contact-icon">
+                            <img src="images/LinkedIn.ico" alt="LinkedIn">
+                        </div>
+                        <div class="contact-text">
+                            <h3>LinkedIn</h3>
+                            <a href="https://www.linkedin.com/in/nomenafitia-andry-967467397/" target="_blank" rel="noopener">ANDRY Nomenafitia</a>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <h3>📧 Email</h3>
-                        <a href="mailto:contact@prettyflacko.fr" target="_blank">contact@prettyflacko.fr</a>
+                        <div class="contact-icon">
+                            <img src="images/Instagram.ico" alt="Instagram">
+                        </div>
+                        <div class="contact-text">
+                            <h3>Instagram</h3>
+                            <a href="https://www.instagram.com/the_l.emon/" target="_blank" rel="noopener">@the_l.emon</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="images/Message Link.ico" alt="Email">
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <a href="mailto:contact@prettyflacko.fr" target="_blank" rel="noopener">contact@prettyflacko.fr</a>
+                        </div>
                     </div>
                 </div>
             </div>
