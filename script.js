@@ -101,3 +101,98 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         }, 2000);
     }
 });
+
+// Fetch GitHub Languages
+async function fetchGitHubLanguages() {
+    const container = document.getElementById('github-languages');
+    
+    try {
+        // Récupérer tous les repos publics
+        const reposResponse = await fetch('https://api.github.com/users/ANome1/repos?sort=stars&per_page=100');
+        const repos = await reposResponse.json();
+        
+        if (!Array.isArray(repos)) {
+            throw new Error('Erreur API GitHub');
+        }
+        
+        // Compter les langages
+        const languageCounts = {};
+        
+        for (const repo of repos) {
+            if (repo.language && repo.language !== null) {
+                languageCounts[repo.language] = (languageCounts[repo.language] || 0) + 1;
+            }
+        }
+        
+        // Trier par fréquence et garder les 6 meilleurs
+        const sortedLangs = Object.entries(languageCounts)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 6);
+        
+        if (sortedLangs.length === 0) {
+            container.innerHTML = '<div class="language-error">Aucun langage trouvé</div>';
+            return;
+        }
+        
+        // Couleurs pour chaque langage
+        const langColors = {
+            'JavaScript': '#f1e05a',
+            'TypeScript': '#3178c6',
+            'Go': '#00add8',
+            'Python': '#3572a5',
+            'HTML': '#e34c26',
+            'CSS': '#563d7c',
+            'Java': '#b07219',
+            'C': '#555555',
+            'C++': '#f34b7d',
+            'C#': '#239120',
+            'Ruby': '#cc342d',
+            'PHP': '#777bb4',
+            'Swift': '#fa7343',
+            'Kotlin': '#7f52ff',
+            'Rust': '#ce422b',
+            'Shell': '#89e051',
+            'Objective-C': '#438eff'
+        };
+        
+        // Créer le HTML
+        let html = '<div class="languages-list">';
+        
+        // Barre de progression
+        html += '<div class="languages-bar">';
+        const total = sortedLangs.reduce((sum, [, count]) => sum + count, 0);
+        let currentPosition = 0;
+        
+        sortedLangs.forEach(([lang, count]) => {
+            const percentage = (count / total) * 100;
+            const color = langColors[lang] || '#8b5cf6';
+            html += `<div class="lang-bar-segment" style="width: ${percentage}%; background-color: ${color};" title="${lang}: ${count} repos"></div>`;
+        });
+        
+        html += '</div>';
+        
+        // Liste des langages
+        html += '<div class="languages-details">';
+        sortedLangs.forEach(([lang, count]) => {
+            const percentage = ((count / total) * 100).toFixed(1);
+            const color = langColors[lang] || '#8b5cf6';
+            html += `
+                <div class="language-item">
+                    <span class="lang-color" style="background-color: ${color};"></span>
+                    <span class="lang-name">${lang}</span>
+                    <span class="lang-percentage">${percentage}%</span>
+                </div>
+            `;
+        });
+        html += '</div>';
+        html += '</div>';
+        
+        container.innerHTML = html;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des langages:', error);
+        container.innerHTML = '<div class="language-error">Impossible de charger les langages GitHub</div>';
+    }
+}
+
+// Charger les langages au chargement de la page
+document.addEventListener('DOMContentLoaded', fetchGitHubLanguages);
