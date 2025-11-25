@@ -191,7 +191,18 @@
             
             <!-- Top Languages -->
             <div class="top-languages">
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ANome1&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b3a&title_color=8b5cf6&text_color=f1f0ff&cache_seconds=1800" alt="Top Languages" class="github-stat-card" loading="lazy" onerror="this.style.display='none'">
+                <!-- Solution 1: GitHub Readme Stats (avec fallback) -->
+                <img 
+                    src="https://github-readme-stats.vercel.app/api/top-langs/?username=ANome1&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b3a&title_color=8b5cf6&text_color=f1f0ff&langs_count=6&exclude_repo=&hide=html,css" 
+                    alt="Top Languages" 
+                    class="github-stat-card" 
+                    loading="lazy"
+                    onerror="this.src='https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=ANome1&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b3a&title_color=8b5cf6&text_color=f1f0ff&langs_count=6'; this.onerror=null;">
+                
+                <!-- Solution 2: GitHub Stats alternative (backup) -->
+                <noscript>
+                    <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=ANome1&layout=compact&theme=tokyonight" alt="Top Languages Backup">
+                </noscript>
             </div>
         </div>
     </section>
