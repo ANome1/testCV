@@ -1,4 +1,15 @@
 /* ========================================
+   FONT IMPORT
+   ======================================== */
+@font-face {
+    font-family: 'Kindred Youth';
+    src: url('font/Kindred Youth.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ========================================
    VARIABLES CSS
    ======================================== */
 :root {
@@ -106,10 +117,12 @@ body {
 }
 
 .brand {
-  font-size: 1.25rem;
+  font-family: 'Kindred Youth', sans-serif;
+  font-size: 1.5rem;
   margin: 0;
   color: #ffffff;
-  font-weight: 700;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .nav-toggle {
@@ -442,14 +455,15 @@ section {
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-family: 'Kindred Youth', sans-serif;
+  font-size: 4rem;
   margin-bottom: 12px;
-  font-weight: 900;
+  font-weight: 400;
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  letter-spacing: -0.5px;
+  letter-spacing: 1px;
 }
 
 .hero .lead {
