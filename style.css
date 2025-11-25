@@ -780,6 +780,25 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Languages Badges (Shields.io) */
+.languages-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.languages-badges img {
+  height: 40px;
+  transition: transform 0.2s ease;
+}
+
+.languages-badges img:hover {
+  transform: translateY(-2px);
+}
+
 /* GitHub Languages Container */
 .github-languages-container {
   max-width: 700px;
